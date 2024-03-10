@@ -1,0 +1,20 @@
+<div class="row">
+
+    <div class="card" style="width: 18rem; margin-bottom: 20px; margin-right: 10px;" *ngFor="let p of prodotti">
+        <img [src]="p.image" class="card-img-top" alt="..." *ngIf="p.rating?.rate! > 3">
+        <div class="card-body">
+            <h5 class="card-title">{{p.title}}</h5>
+            <p class="card-text">{{p.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Id: {{p.id}}</li>
+            <li class="list-group-item">Prezzo: {{p.price }}</li>
+            <li class="list-group-item">Categoria: {{p.category | uppercase}}</li>
+        </ul>
+        <div class="card-body">
+            <h3 class="card-text">VALUTAZIONE</h3>
+            <p class="card-text"> Voto: {{p.rating?.rate}}</p>
+            <p class="card-text"> Conteggio: {{p.rating?.count}}</p>
+        </div>
+    </div>
+</div>
